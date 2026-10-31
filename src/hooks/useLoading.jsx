@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { renderToStaticMarkup } from "react-dom/server";
 
 function useLoading() {
     const [loading, setLoading] = useState(true);
@@ -7,11 +6,11 @@ function useLoading() {
     const startLoading= ()=> setLoading(true);
     const stopLoading= ()=> setLoading(false);
 
-    return (
+    return {
         loading,
         startLoading,
-        stopLoading
-    );
+        stopLoading,
+    }
 }
 
 export default useLoading
